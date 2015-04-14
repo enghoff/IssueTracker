@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Web;
 using System.Web.Mvc;
 using Funq;
+using IssueTracking.Common;
 using ServiceStack;
 using ServiceStack.Mvc;
 using IssueTracking.ServiceInterface;
@@ -38,6 +39,8 @@ namespace IssueTracking
             //Config examples
             //this.Plugins.Add(new PostmanFeature());
             //this.Plugins.Add(new CorsFeature());
+
+            container.Register<IModelContainer>(c => new ModelContainer());
 
             //Set MVC to use the same Funq IOC as ServiceStack
             ControllerBuilder.Current.SetControllerFactory(new FunqControllerFactory(container));

@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace IssueTracking.Common
+﻿namespace IssueTracking.Common
 {
-    public interface IEntityProvider
+    public interface IModelContainer
     {
         Issue GetIssue(int id);
         int AddIssue(string description);
